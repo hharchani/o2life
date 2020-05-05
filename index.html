@@ -235,34 +235,41 @@
 <html>
 <head>
 <style>
-#myDIV {
-  margin: auto;
-  width: 500px;
-  height: 100px;
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF8DC;
+  min-width: 600px;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+  padding: 0px 0px;
+  z-index: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 </head>
 <body>
 
-<strong>Previous Updates</strong></br>
-</br>
+<h2>Previous updates</h2>
+<p>Move the mouse over the text below to open the dropdown content.</p>
 
-
-<small><button onclick="myFunction()">Click Here</button>
-
-<div id="myDIV">Posted on Mar 21, 2020
+<div class="dropdown">
+  <strong><span>Dropdown</span>
+  <small><div class="dropdown-content"><small>
+  <small><p>Posted on Mar 21, 2020
 
 As a responsible Citizen of India, we are supporting our Prime Minister's request to follow "JANATA CURFEW" on 22nd March, 2020 from 7:00 AM to 10:00 PM. Hence, our services will be stopped.
 
-Inconvenience caused is deeply regretted.</div>
-
-
-
-<script>
-function myFunction() {
-  document.getElementById("myDIV").style.visibility = "hidden";
-}
-</script>
+Inconvenience caused is deeply regretted.</p><small>
+  </div>
+</div>
 
 </body>
 </html>
