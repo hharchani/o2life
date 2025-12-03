@@ -1,252 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O2 Life – Pure & Safe Drinking Water</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O2life – Pure & Safe Drinking Water</title>
+  <style>
+    :root {
+      --primary-color: #006bb3;
+      --accent-color: #00aaff;
+      --bg-light: #f7faff;
+      --text-dark: #0d2235;
+      --header-height: 70px;
+    }
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap.css">
+    * {
+      margin:0; padding:0; box-sizing: border-box;
+    }
 
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-    <style>
-        /* Fix content hidden behind header */
-        body {
-            padding-top: 110px;
-        }
+    a { text-decoration: none; color: inherit; }
 
-        /* Sliding Menu */
-        #sideMenu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 3000;
-            top: 0;
-            left: 0;
-            background: white;
-            overflow-x: hidden;
-            transition: 0.3s;
-            padding-top: 60px;
-            box-shadow: 2px 0 15px rgba(0,0,0,0.2);
-        }
-
-        #sideMenu a {
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 20px;
-            color: #004f9f;
-            display: block;
-            transition: 0.2s;
-            font-weight: 600;
-        }
-
-        #sideMenu a:hover {
-            background: #e8f3ff;
-        }
-
-        #sideMenu .closeBtn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 36px;
-            font-weight: bold;
-            color: #004f9f;
-        }
-
-        /* Hide desktop menu on mobile */
-        @media screen and (max-width: 768px) {
-            .desktop-menu { display: none; }
-            #menuBtn { display: block !important; }
-        }
-    </style>
+    /* Header */
+    header {
+      position: fixed;
+      top:0; left:0; right:0;
+      height: var(--header-height);
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+      border-bottom: 1px solid #e1e7ec;
+    }
+    header .logo img {
+      height: 55px;
+    }
+    nav.desktop-menu ul {
+      display:flex;
+      gap: 20px;
+      list-style:none;
+    }
+    nav.desktop-menu ul li a {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 8px 4px;
+      color: var(--primary-color);
+    }
+    nav.desktop-menu ul li a:hover {
+      color: var(--accent-color);
+    }
+    /* Hero */
+    .hero {
+      margin-top: var(--header-height);
+      height: calc(100vh - var(--header-height));
+      background: url('badripic8.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    /* Sections */
+    section {
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .center { text-align: center; }
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 16px;
+      margin: 10px 5px;
+    }
+    .btn:hover {
+      background: var(--accent-color);
+    }
+    /* Footer */
+    footer {
+      background: var(--bg-light);
+      padding: 40px 20px;
+      color: var(--text-dark);
+      text-align: center;
+      border-top: 1px solid #e1e7ec;
+    }
+    footer a {
+      color: var(--primary-color);
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      nav.desktop-menu { display: none; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- SLIDING SIDE MENU -->
-<div id="sideMenu">
-    <a href="javascript:void(0)" class="closeBtn" onclick="closeMenu()">×</a>
-    <a href="index.html#home">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#order">Order Now</a>
-    <a href="index.html#updates">Updates</a>
-    <a href="index.html#gallery">Gallery</a>
-    <a href="index.html#contact">Contact</a>
-</div>
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><a href="#home"><img src="logo.svg" alt="O2life Logo"></a></div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order">Order Now</a></li>
+        <li><a href="#updates">Updates</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- FIXED GLOBAL HEADER -->
-<header style="
-        background: rgba(255,255,255,0.85);
-        backdrop-filter: blur(10px);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 2000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    ">
-
-    <div style="
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        max-width:1200px;
-        margin:auto;
-        padding:10px 20px;
-    ">
-
-        <!-- MOBILE MENU BUTTON -->
-        <div onclick="openMenu()" 
-             style="font-size:45px; cursor:pointer; display:none;" 
-             id="menuBtn">
-            ☰
-        </div>
-
-        <!-- LOGO -->
-        <a href="index.html">
-            <img src="logo.svg" 
-                 alt="O2 Life Logo" 
-                 style="height:85px; width:auto;">
-        </a>
-
-        <!-- DESKTOP MENU -->
-        <nav class="desktop-menu">
-            <ul style="display:flex; gap:25px; list-style:none; margin:0; padding:0;">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#order">Order Now</a></li>
-                <li><a href="index.html#updates">Updates</a></li>
-                <li><a href="index.html#gallery">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>O2life</h1>
+      <p>Every drop is precious.</p>
+      <a href="#order" class="btn">Order Now</a>
     </div>
-</header>
+  </section>
 
-<!-- HERO SECTION -->
-<section id="home">
-    <div class="slider-container">
-        <img src="badripic8.jpg" style="width:100%; height:auto;">
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container center">
+      <h2>About Us</h2>
+      <p>Clean and safe drinking water is essential for good health. At <strong>O2life</strong>, we use advanced multi-stage purification and strict quality checks to deliver safe, fresh water to your doorstep.</p>
+      <p>We deliver 20 L bottles, maintaining purity, hygiene, and prompt delivery — because <strong>every drop matters</strong>.</p>
     </div>
-</section>
+  </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" style="padding:80px 0; background:#f7f9fc;">
+  <!-- ORDER NOW -->
+  <section id="order" style="background: #f0f9ff;">
+    <div class="container center">
+      <h2>Order Now</h2>
+      <p>We supply 20-Litre water bottles at reasonable prices. Serving customers across Gachibowli, Indira Nagar, Nanakramguda, Kokapet, Madhapur & nearby areas. Timings: 9 AM – 9 PM.</p>
+      <a href="https://forms.gle/TyfEvoXLhohyo5eS6" class="btn">Refill Order</a>
+      <a href="https://forms.gle/hQoakcAN1PXHmXPa8" class="btn">Bulk Order</a>
+    </div>
+  </section>
+
+  <!-- UPDATES / NEWS -->
+  <section id="updates">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-
-                <h2 style="font-size:36px; font-weight:700; color:#003e78; margin-bottom:20px;">
-                    About Us
-                </h2>
-
-                <p class="lead" style="font-size:18px; line-height:1.7; color:#333;">
-                    Clean and safe drinking water is essential for good health. At 
-                    <strong>O2life</strong>, every drop is purified through an advanced 
-                    multi-stage filtration system and strict quality checks.
-                </p>
-
-                <p class="lead" style="font-size:18px; line-height:1.7; color:#333;">
-                    We provide high-quality packaged drinking water with 
-                    reliable doorstep delivery —  
-                    <strong>pure water delivered with care and trust.</strong>
-                </p>
-
-            </div>
-        </div>
+      <h2 class="center">Latest News</h2>
+      <div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+        <p><strong>Updated on May 03, 2020</strong></p>
+        <p>Due to lockdown safety measures, deliveries are available from <strong>11:00 AM – 3:00 PM</strong> on weekdays.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- ORDER NOW -->
-<section id="order" style="padding:60px 0; text-align:center;">
-    <h2 style="font-size:32px; font-weight:700; color:#003e78;">ORDER NOW</h2>
-
-    <p class="lead" style="max-width:800px; margin:auto;">
-        We supply 20 Litre water bottles at reasonable prices. Over 
-        <strong>400 regular customers</strong> trust our service.
-    </p>
-
-    <br>
-    <p class="lead"><strong>Timings:</strong> 9 AM – 9 PM</p>
-
-    <p class="lead" style="max-width:850px; margin:auto;">
-        <strong>Areas:</strong> Gachibowli, Indira Nagar, Nanakramguda, Telecom Nagar,
-        Kokapet, Khajaguda, Madhapur, and nearby areas.
-    </p>
-
-    <br>
-    <h3 style="font-size:24px; color:#003e78;">
-        Bulk orders need 1–2 days prior request.
-    </h3>
-    <br><br>
-
-    <div>
-        <a href="https://forms.gle/TyfEvoXLhohyo5eS6" class="btn btn-primary btn-lg" 
-           style="margin:10px; padding:12px 25px;">Refill Order</a>
-
-        <a href="https://forms.gle/hQoakcAN1PXHmXPa8" class="btn btn-success btn-lg" 
-           style="margin:10px; padding:12px 25px;">Bulk Orders</a>
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact">
+    <div class="container center">
+      <h2>Contact Us</h2>
+      <p><strong>Veerabhadra Agencies</strong>, Gachibowli, Hyderabad</p>
+      <p>📞 98486-87481, 97032-59648</p>
+      <p>✉ <a href="mailto:badri@o2life.co.in">badri@o2life.co.in</a>, <a href="mailto:o2lifehyd@gmail.com">o2lifehyd@gmail.com</a></p>
+      <p><a href="https://o2-life-packaged-drinking-water.business.site/" target="_blank">Google Business Link</a></p>
+      <p style="margin-top:20px; font-size:14px; color:#666;">© 2025 Veerabhadra Agencies — O2life</p>
     </div>
-</section>
-
-<!-- UPDATES -->
-<section id="updates" style="padding:70px 20px; background:#f8fbff;">
-    <div style="max-width:900px; margin:auto; text-align:center;">
-        <h2 style="font-size:34px; font-weight:700; color:#003e78;">Latest News</h2>
-        <p style="font-size:16px; color:#666;"><strong>Updated on May 03, 2020</strong></p>
-
-        <div style="
-            background:white; padding:25px; border-radius:14px; 
-            box-shadow:0 4px 20px rgba(0,0,0,0.08); 
-            font-size:18px; line-height:1.6;">
-            Due to lockdown and safety measures, services are available from 
-            <strong>11:00 AM – 3:00 PM</strong> on weekdays.
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<footer id="contact" style="padding:70px 20px; background:#002d5b; color:white;">
-    <div style="max-width:1000px; margin:auto; text-align:center;">
-        <h2 style="font-size:32px; font-weight:700;">Contact Us</h2>
-
-        <p><strong>Veerabhadra Agencies</strong></p>
-        <p>Gachibowli, Hyderabad</p>
-        <p>📞 9848687481, 9703259648</p>
-        <p>
-            ✉ <a href="mailto:badri@o2life.co.in" style="color:#7fc8ff;">badri@o2life.co.in</a>,
-            <a href="mailto:o2lifehyd@gmail.com" style="color:#7fc8ff;">o2lifehyd@gmail.com</a>
-        </p>
-
-        <p>
-            🌐 <a href="https://o2-life-packaged-drinking-water.business.site/" 
-                 style="color:#7fc8ff;">Google Business Link</a>
-        </p>
-
-        <p style="margin-top:30px; font-size:15px; opacity:0.8;">
-            © Veerabhadra Agencies — Powered by 
-            <a href="http://www.o2life.co.in/" style="color:#7fc8ff;">O2 Life</a>
-        </p>
-    </div>
-</footer>
-
-<footer style="background:#003e78; color:white; padding:25px; text-align:center;">
-    © 2025 O2 Life. All Rights Reserved.
-</footer>
-
-<!-- MENU SCRIPT -->
-<script>
-function openMenu() {
-    document.getElementById("sideMenu").style.width = "260px";
-}
-
-function closeMenu() {
-    document.getElementById("sideMenu").style.width = "0";
-}
-</script>
+  </footer>
 
 </body>
 </html>
