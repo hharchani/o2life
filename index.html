@@ -1,85 +1,82 @@
-<!-- Hero Slider -->
-<section id="home" class="hero-section">
-
-    <div class="hero-slider">
-        <div class="slide active" style="background-image:url('water-splash.jpg');"></div>
-        <div class="slide" style="background-image:url('water-bottle-clear.jpg');"></div>
-        <div class="slide" style="background-image:url('fresh-water-bg.jpg');"></div>
-    </div>
-
-    <div class="hero-title">
-        <h1>O2 Life Packaged Drinking Water</h1>
-        <p>Pure • Safe • Delivered to Your Doorstep</p>
-    </div>
-
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Options Demo</title>
 
 <style>
-.hero-section {
-    position: relative;
-    height: 95vh;
-    width: 100%;
-    overflow: hidden;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        padding: 40px;
+    }
 
-.hero-slider {
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
+    .container {
+        max-width: 400px;
+        margin: auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
 
-.hero-slider .slide {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
+    h2 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
 
-.hero-slider .slide.active {
-    opacity: 1;
-}
+    .option {
+        padding: 12px;
+        margin: 10px 0;
+        background: #eee;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.3s;
+    }
 
-.hero-title {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 8px black;
-}
+    .option:hover {
+        background: #ddd;
+    }
 
-.hero-title h1 {
-    font-size: 60px;
-    font-weight: 800;
-}
-
-.hero-title p {
-    font-size: 24px;
-    margin-top: 10px;
-}
-
-/* Responsive */
-@media(max-width:768px) {
-    .hero-title h1 { font-size: 36px; }
-    .hero-title p { font-size: 18px; }
-}
+    .active {
+        background: black;
+        color: white;
+    }
 </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Select Option</h2>
+
+    <div class="option" id="optA">Option A</div>
+    <div class="option" id="optB">Option B</div>
+
+    <p id="result" style="margin-top:20px; font-weight:bold;"></p>
+</div>
 
 <script>
-// Auto Slide
-let currentSlide = 0;
-const slides = document.querySelectorAll('.hero-slider .slide');
+    const optA = document.getElementById("optA");
+    const optB = document.getElementById("optB");
+    const result = document.getElementById("result");
 
-setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-}, 4000); // 4 seconds
+    optA.onclick = function() {
+        optA.classList.add("active");
+        optB.classList.remove("active");
+        result.textContent = "You selected Option A";
+    };
+
+    optB.onclick = function() {
+        optB.classList.add("active");
+        optA.classList.remove("active");
+        result.textContent = "You selected Option B";
+    };
 </script>
+
+</body>
+</html>
 
 
 
