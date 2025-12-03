@@ -1,229 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>O2Life Drinking Water</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O2 Life – Pure & Safe Drinking Water</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
-    }
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap.css">
 
-    /* LEFT SLIDING MENU */
-    .side-menu {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        background: #111;
-        padding-top: 60px;
-        transition: 0.4s;
-        z-index: 1000;
-    }
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
 
-    .side-menu a {
-        padding: 12px 24px;
-        display: block;
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-    }
+    <style>
+        /* Modern clean navigation */
+        #primary-menu {
+            display: flex;
+            justify-content: center;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            padding: 12px 0;
+        }
 
-    .side-menu a:hover {
-        background: #333;
-    }
+        #primary-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* OPEN BUTTON */
-    .open-btn {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        font-size: 25px;
-        color: #fff;
-        background: rgba(0,0,0,0.3);
-        padding: 10px 15px;
-        border-radius: 6px;
-        cursor: pointer;
-        z-index: 1100;
-    }
+        #primary-menu li a {
+            font-size: 17px;
+            font-weight: 600;
+            color: #004f9f;
+            text-transform: uppercase;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
 
-    /* LOGO */
-    .logo {
-        width: 160px;
-        margin: 20px auto;
-        display: block;
-    }
+        #primary-menu li a:hover {
+            color: #0b7dda;
+            border-bottom: 2px solid #0b7dda;
+        }
 
-    /* FULL PAGE HERO IMAGE */
-    .hero {
-        height: 100vh;
-        background-image: url('your_front_page_image.jpg');
-        background-size: cover;
-        background-position: center;
-        position: relative;
-    }
+        /* Section titles */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #003e78;
+        }
 
-    .hero-title {
-        position: absolute;
-        bottom: 40px;
-        left: 40px;
-        font-size: 48px;
-        color: #fff;
-        font-weight: bold;
-        text-shadow: 2px 2px 10px #000;
-    }
-</style>
+        /* Smooth layout spacing */
+        section {
+            padding: 70px 0;
+        }
 
-<script>
-    function openMenu() {
-        document.getElementById("menu").style.left = "0";
-    }
-    function closeMenu() {
-        document.getElementById("menu").style.left = "-250px";
-    }
-</script>
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- OPEN MENU BUTTON -->
-<div class="open-btn" onclick="openMenu()">☰</div>
+    <!-- Header -->
+    <header style="background:rgba(255,255,255,0.85); backdrop-filter:blur(8px);">
+        <div style="
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center;
+            max-width:1200px; 
+            margin:auto; 
+            padding:10px 20px;
+        ">
 
-<!-- LEFT SLIDING MENU -->
-<div id="menu" class="side-menu">
-    <a href="javascript:void(0)" onclick="closeMenu()">✕ Close</a>
-    <img src="/mnt/data/logo.svg" class="logo" alt="O2Life Logo">
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Products</a>
-    <a href="#">Services</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
-</div>
+            <!-- LOGO ADDED HERE -->
+            <a href="#home">
+                <img src="logo.svg" alt="O2 Life Logo" style="height:60px; width:auto;">
+            </a>
 
-<!-- HERO SECTION WITH FULLSCREEN IMAGE -->
-<div class="hero">
-    <div class="hero-title">O2Life – Pure & Safe Drinking Water</div>
-</div>
+            <nav id="primary-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="#updates">Updates</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-</body>
-</html>
+        </div>
+    </header>
 
-
-<!-- 🌟 WEBSITE CONTENT -->
-<div class="page-content">
 
     <!-- Hero Slider -->
     <section id="home">
-        < img src="badripic8.jpg" style="width:100%; height:auto;">
+        <div class="slider-container">
+            <img src="badripic8.jpg" style="width:100%; height:auto;">
+        </div>
     </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" style="background:#f7f9fc;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
 
-                <h2 style="font-size:36px; font-weight:700; color:#003e78;">About Us</h2>
+    <!-- ABOUT SECTION -->
+    <section id="about" style="padding:80px 0; background:#f7f9fc;">
+        <div class="container">
 
-                <p class="lead" style="font-size:18px; color:#333;">
-                    Clean and safe drinking water is essential for good health. At 
-                    <strong>O2life</strong>, every drop is purified through advanced multi-stage filtration and strict quality checks.
-                </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
 
-                <p class="lead" style="font-size:18px; color:#333;">
-                    Our goal is simple — <strong>pure water, delivered with trust and consistency.</strong>
-                </p>
+                    <h2 style="font-size:36px; font-weight:700; color:#003e78; margin-bottom:20px;">
+                        About Us
+                    </h2>
 
+                    <p class="lead" style="font-size:18px; line-height:1.7; color:#333;">
+                        Clean and safe drinking water is essential for good health. At <strong>O2life</strong>, 
+                        every drop is purified through an advanced multi-stage filtration system and 
+                        strict quality checks to ensure it is safe, fresh, and healthy.
+                    </p>
+
+                    <p class="lead" style="font-size:18px; line-height:1.7; color:#333;">
+                        We are committed to providing high-quality packaged drinking water with reliable 
+                        doorstep delivery. Our goal is simple — 
+                        <strong>pure water, delivered with care, trust, and consistency.</strong>
+                    </p>
+
+                </div>
             </div>
+
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ORDER NOW -->
-<section id="order" style="text-align:center;">
 
-    <h2 style="font-size:32px; font-weight:700; color:#003e78;">ORDER NOW</h2>
+
+   <!-- ORDER NOW Section -->
+<section id="order" style="padding:60px 0; text-align:center;">
+
+    <h2 style="font-size:32px; font-weight:700; color:#003e78; margin-bottom:20px;">
+        ORDER NOW
+    </h2>
 
     <p class="lead" style="max-width:800px; margin:auto;">
-        We supply 20 Litre water bottles at reasonable prices, maintaining high quality & purity.
-        We proudly serve over <strong>400 regular customers.</strong>
+        We supply 20 Litre water bottles at reasonable prices. Keeping customer health in mind,
+        we maintain high-quality drinking water. Our prompt and sincere service has gained
+        us over <strong>400 regular customers</strong>.
     </p>
 
-    <p class="lead"><strong>Timings:</strong> 9 AM – 9 PM</p>
+    <br>
 
-    <p class="lead" style="max-width:850px; margin:auto;">
-        <strong>Areas:</strong> Gachibowli, Indira Nagar, Nanakramguda, Telecom Nagar,
-        Kokapet, Khajaguda, Madhapur & nearby areas.
+    <p class="lead" style="font-size:18px;">
+        <strong>Timings:</strong> 9 AM – 9 PM
     </p>
 
-    <h3 style="font-size:24px; color:#003e78;">
-        Bulk orders: 1–2 days prior request.
+    <p class="lead" style="max-width:850px; margin:auto; font-size:18px;">
+        <strong>Areas covered:</strong> Gachibowli, Indira Nagar, Nanakramguda, Telecom Nagar,
+        Kokapet, Khajaguda, Madhapur, and surrounding areas.
+    </p>
+
+    <br>
+
+    <h3 style="font-size:24px; color:#003e78; margin-top:20px;">
+        Bulk orders can be supplied with 1–2 days prior request.
     </h3>
+
+    <br><br>
 
     <!-- Buttons -->
     <div>
-        <a href="https://forms.gle/TyfEvoXLhohyo5eS6" class="btn btn-primary btn-lg">Refill Order</a>
-        <a href="https://forms.gle/hQoakcAN1PXHmXPa8" class="btn btn-success btn-lg">Bulk Orders</a>
+        <a href="https://forms.gle/TyfEvoXLhohyo5eS6" 
+           class="btn btn-primary btn-lg" 
+           style="margin:10px; padding:12px 25px; font-size:18px;">
+           Refill Order
+        </a>
+
+        <a href="https://forms.gle/hQoakcAN1PXHmXPa8" 
+           class="btn btn-success btn-lg" 
+           style="margin:10px; padding:12px 25px; font-size:18px;">
+           Bulk Orders
+        </a>
     </div>
 
-</section>
+<!-- Updates -->
+<section id="updates" style="padding: 70px 20px; background:#f8fbff;">
+    
+    <div style="max-width: 900px; margin: auto; text-align:center;">
 
-<!-- UPDATES -->
-<section id="updates" style="background:#f8fbff; padding:70px 20px;">
-    <div style="max-width:900px; margin:auto; text-align:center;">
+        <h2 style="
+            font-size: 34px;
+            font-weight: 700;
+            color:#003e78;
+            margin-bottom: 10px;">
+            Latest News
+        </h2>
 
-        <h2 style="font-size:34px; color:#003e78;">Latest News</h2>
-        <p><strong>Updated on May 03, 2020</strong></p>
+        <p style="font-size:16px; color:#666; margin-bottom: 25px;">
+            <strong>Updated on May 03, 2020</strong>
+        </p>
 
         <div style="
-            background:#fff; padding:25px; border-radius:14px;
-            box-shadow:0 4px 20px rgba(0,0,0,0.08);">
-            Due to lockdown, services are available from 
-            <strong>11:00 AM – 3:00 PM</strong> on all weekdays.
+            background:white;
+            padding:25px;
+            border-radius:14px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.08);
+            font-size:18px;
+            line-height:1.6;
+            color:#333;">
+            Due to the lockdown and safety measures, services are temporarily available from 
+            <strong>11:00 AM – 3:00 PM on all weekdays</strong>.  
+            We appreciate your cooperation. Stay safe.
         </div>
 
     </div>
+
 </section>
 
-<!-- CONTACT -->
-<footer id="contact" style="background:#002d5b; color:white; padding:70px 20px; text-align:center;">
 
-    <h2 style="font-size:32px;">Contact Us</h2>
+<!-- Contact -->
+<footer id="contact" style="padding:70px 20px; background:#002d5b; color:white;">
 
-    <p><strong>Veerabhadra Agencies</strong>, Gachibowli, Hyderabad</p>
-    <p>📞 9848687481, 9703259648</p>
-    <p>Email: badri@o2life.co.in | o2lifehyd@gmail.com</p>
+    <div style="max-width:1000px; margin:auto; text-align:center;">
 
-    <p>
-        🌐 <a href="https://o2-life-packaged-drinking-water.business.site/" style="color:#7fc8ff;">
-            Google Business Link
-        </a>
-    </p>
+        <h2 style="
+            font-size: 32px;
+            font-weight:700;
+            margin-bottom:20px;
+            color:white;">
+            Contact Us
+        </h2>
 
-    <p style="margin-top:30px; font-size:15px;">
-        © Veerabhadra Agencies — Powered by O2 Life
-    </p>
+        <p style="font-size:18px; margin:8px 0;">
+            <strong>Veerabhadra Agencies</strong>
+        </p>
+
+        <p style="font-size:17px; margin:8px 0;">
+            Gachibowli, Hyderabad
+        </p>
+
+        <p style="font-size:17px; margin:8px 0;">
+            📞 Mobile: <strong>9848687481</strong>, <strong>9703259648</strong>
+        </p>
+
+        <p style="font-size:17px; margin:8px 0;">
+            ✉ Email: <a href="mailto:badri@o2life.co.in" style="color:#7fc8ff;">badri@o2life.co.in</a>, 
+            <a href="mailto:o2lifehyd@gmail.com" style="color:#7fc8ff;">o2lifehyd@gmail.com</a>
+        </p>
+
+        <p style="font-size:17px; margin:8px 0;">
+            🌐 <a href="https://o2-life-packaged-drinking-water.business.site/" 
+                 style="color:#7fc8ff;">Google Business Link</a>
+        </p>
+
+        <!-- Footer Bottom -->
+        <p style="margin-top:30px; font-size:15px; opacity:0.8;">
+            © Veerabhadra Agencies — Powered by 
+            <a href="http://www.o2life.co.in/" style="color:#7fc8ff;">O2 Life</a>
+        </p>
+
+    </div>
 
 </footer>
 
-</div> <!-- END PAGE CONTENT -->
 
-<!-- JS -->
-<script>
-const menuBtn = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
-const pageContent = document.querySelector(".page-content");
+    <!-- Footer -->
+    <footer style="background:#003e78; color:white; padding:25px; text-align:center;">
+        © 2025 O2 Life. All Rights Reserved.
+    </footer>
 
-menuBtn.addEventListener("click", () => {
-    sideMenu.classList.toggle("open");
-    pageContent.classList.toggle("page-shift");
-});
-</script>
+
+    <!-- Scripts -->
+    <script src="jquery.js"></script>
+    <script src="plugins.js"></script>
+    <script src="functions.js"></script>
 
 </body>
 </html>
