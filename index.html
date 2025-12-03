@@ -1,93 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O2 Life – Pure & Safe Water</title>
+<!-- Hero Slider -->
+<section id="home" class="hero-section">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap.css">
+    <div class="hero-slider">
+        <div class="slide active" style="background-image:url('water-splash.jpg');"></div>
+        <div class="slide" style="background-image:url('water-bottle-clear.jpg');"></div>
+        <div class="slide" style="background-image:url('fresh-water-bg.jpg');"></div>
+    </div>
 
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
+    <div class="hero-title">
+        <h1>O2 Life Packaged Drinking Water</h1>
+        <p>Pure • Safe • Delivered to Your Doorstep</p>
+    </div>
 
-    <style>
-        /* Modern clean navigation */
-        #primary-menu {
-            display: flex;
-            justify-content: center;
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(8px);
-            padding: 12px 0;
-        }
+</section>
 
-        #primary-menu ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+.hero-section {
+    position: relative;
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+}
 
-        #primary-menu li a {
-            font-size: 17px;
-            font-weight: 600;
-            color: #004f9f;
-            text-transform: uppercase;
-            padding-bottom: 3px;
-            border-bottom: 2px solid transparent;
-            transition: 0.3s;
-        }
+.hero-slider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
 
-        #primary-menu li a:hover {
-            color: #0b7dda;
-            border-bottom: 2px solid #0b7dda;
-        }
+.hero-slider .slide {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
 
-        /* Section titles */
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #003e78;
-        }
+.hero-slider .slide.active {
+    opacity: 1;
+}
 
-        /* Smooth layout spacing */
-        section {
-            padding: 70px 0;
-        }
+.hero-title {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+}
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
+.hero-title h1 {
+    font-size: 60px;
+    font-weight: 800;
+}
 
-<body>
+.hero-title p {
+    font-size: 24px;
+    margin-top: 10px;
+}
 
-    <!-- Header -->
-    <header>
-        <nav id="primary-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#order">Order Now</a></li>
-                <li><a href="#updates">Updates</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Responsive */
+@media(max-width:768px) {
+    .hero-title h1 { font-size: 36px; }
+    .hero-title p { font-size: 18px; }
+}
+</style>
 
+<script>
+// Auto Slide
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slider .slide');
 
-    <!-- Hero Slider -->
-    <section id="home">
-        <div class="slider-container">
-            <img src="badripic8.jpg" style="width:100%; height:auto;">
-        </div>
-    </section>
+setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}, 4000); // 4 seconds
+</script>
+
 
 
    <!-- ABOUT SECTION -->
